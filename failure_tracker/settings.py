@@ -27,8 +27,8 @@ DEBUG = True
 
 #ALLOWED_HOSTS = ['project-7vpb.onrender.com']
 
-ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
-
+#ALLOWED_HOSTS = ['.onrender.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['project-7vpb.onrender.com', '.onrender.com', 'localhost', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
