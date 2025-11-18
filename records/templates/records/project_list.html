@@ -1,0 +1,33 @@
+{% extends 'records/base.html' %}
+{% block title %}Project List{% endblock %}
+{% block content %}
+<h1>All Projects</h1>
+<a href="/projects/add/" class="btn">Add New Project</a>
+
+<form method="get" action="">
+    <input type="text" name="q" placeholder="Search projects">
+    <button type="submit">Search</button>
+</form>
+
+<table border="1">
+    <tr>
+        <th>Project ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Created At</th>
+        <th>Action</th>
+    </tr>
+    {% for project in projects %}
+    <tr>
+        <td>{{ project.project_id }}</td>
+        <td>{{ project.project_name }}</td>
+        <td>{{ project.description }}</td>
+        <td>{{ project.created_at|date:"Y-m-d H:i" }}</td>
+        <td>
+            <a href="{% url 'project-edit' project.pk %}" class="btn">Edit</a>
+            <a href="{% url 'project-delete' project.pk %}" class="btn" style="background:#e74c3c;">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
